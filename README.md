@@ -13,10 +13,14 @@ Since we are using a pre-trained model in this project, we don’t need any data
 Project Prerequisites
 The requirement is Python and the following libraries installed on your computer. I have used a Jupyter notebook for this project. You can use whatever you want.
 
-The required modules for this project are –
+The required modules for this project are – 1. Numpy 
+2. OpenCV
+3. Matplotlib
 
-Numpy – pip install numpy
-OpenCV – pip install cv2
-Matplotlib – pip install matplotlib
+
+      pip install numpy
+      pip install cv2
+      pip install matplotlib
+      
 We are using a pre-trained model in this project. Rest all the functions that we need are already there in OpenCV.
 
