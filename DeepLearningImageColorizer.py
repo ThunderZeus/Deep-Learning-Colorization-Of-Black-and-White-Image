@@ -21,3 +21,13 @@ image = cv2.imread('download.jpg')
 image = image.astype("float32")/255.0
 
 image = cv2.cvtColor(image,cv2.COLOR_BGR2LAB)
+
+resized = cv2.resize(image,(224,224))
+
+split = cv2.split(resized)[0]
+split -= 50
+
+dnn_net.setInput(cv2.dnn.blobFromImage(split))
+forw = dnn_net.forward()[0, :, :, :].transpose((1,2,0))
+ 
+forw = cv2.resize(forw, (image.shape[1],image.shape[0]))
