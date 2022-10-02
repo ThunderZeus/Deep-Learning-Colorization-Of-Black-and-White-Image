@@ -31,3 +31,13 @@ dnn_net.setInput(cv2.dnn.blobFromImage(split))
 forw = dnn_net.forward()[0, :, :, :].transpose((1,2,0))
  
 forw = cv2.resize(forw, (image.shape[1],image.shape[0]))
+
+split = cv2.split(lab)[0]
+colorized = np.concatenate((L[:,:,np.newaxis], ab), axis=2)
+ 
+colorized = cv2.cvtColor(colorized, cv2.COLOR_LAB2RGB)
+colorized = np.clip(colorized, 0, 1)
+colorized = (255 * colorized).astype("uint8")
+
+plt.imshow(colorized)
+plt.axis('off');
